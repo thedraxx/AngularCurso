@@ -37,3 +37,14 @@ const { audioTrack, audioDuration }: Details = details;
 console.log(song); // song1
 
 console.log(audioTrack); // { audioVolumene: 100, audioTrack: 'track1', audioDuration: 120, play: [Function: play], details: { audioTrack: 'track1', audioDuration: 120, song: 'song1' } }
+
+
+
+const dbz: string[] = ['Goku', 'Vegeta', 'Gohan'];
+
+
+const [goku, vegeta, gohan]: string[] = dbz; // Destructuring array
+
+
+
+console.log(goku); // Goku
