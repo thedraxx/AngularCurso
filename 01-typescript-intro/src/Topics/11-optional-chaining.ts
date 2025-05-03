@@ -40,4 +40,4 @@ const printChildren = (passanger: Passanger) => {
 }
 
 printChildren(passanger);
-printChildren(passanger2);
+printChildren(passanger2); 
