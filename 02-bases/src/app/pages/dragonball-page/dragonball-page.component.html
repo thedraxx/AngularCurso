@@ -3,12 +3,16 @@
 
 <section class="mb-4">
   <h2>Dragon Ball Characters</h2>
-  <h3>Agregar:{{name()}}</h3>
+  <h2>Agregar:{{name()}}</h2>
   <div class="mb-3">
+
     <input type="text" class="form-control" placeholder="Nombre del personaje" [value]="name()" #txtName
       (change)="name.set(txtName?.value ?? '')" />
-    <input type="number" class="form-control" placeholder="Poder" />
-    <button class="btn btn-primary mt-2">Agregar</button>
+
+    <input type="number" class="form-control" placeholder="Poder" [value]="power()" #txtPowerLevel
+      (input)="power.set(+txtPowerLevel.value)" />
+
+    <button class="btn btn-primary mt-2" (click)="addCharacter()">Agregar</button>
   </div>
 
   <div class="col-12 mb-3">
@@ -36,11 +40,15 @@
       <li class="list-group-item list-group-item-primary">
         <div class="d-flex justify-content-between align-items-center">
           <div class="d-flex flex-column">
-            <h1>no hay nadie</h1>
+            <span>{{ character.id }}</span>
+            <span>{{ character.name }}</span>
+            <strong [class.text-danger]="character.powerLevel > 9000 "
+              [class.text-primary]="character.powerLevel < 9000 ">
+              {{ character.powerLevel }}
+            </strong>
           </div>
         </div>
-      </li>
-      }
+        }
 
     </ul>
     }

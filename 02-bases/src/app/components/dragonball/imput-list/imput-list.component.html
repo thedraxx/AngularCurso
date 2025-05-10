@@ -1,0 +1,14 @@
+<h2>Dragon Ball Characters</h2>
+<h2>Agregar:{{name()}}</h2>
+
+
+<div class="mb-3">
+
+  <input type="text" class="form-control" placeholder="Nombre del personaje" [value]="name()" #txtName
+    (change)="name.set(txtName?.value ?? '')" />
+
+  <input type="number" class="form-control" placeholder="Poder" [value]="powerLevel()" #txtPowerLevel
+    (input)="powerLevel.set(+txtPowerLevel.value)" />
+
+  <button class="btn btn-primary mt-2" (click)="addCharacter()">Agregar</button>
+</div>

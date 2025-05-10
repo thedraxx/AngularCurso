@@ -1,0 +1,39 @@
+<div class="col-12 mb-3">
+  <h3>{{listname()}}</h3>
+
+  @for (character of characters(); track character.id; let idx = $index) {
+  <ul class="list-group mb-3">
+
+    @if (character.powerLevel > 9000) {
+    <li class="list-group-item list-group-item-danger">
+      <div class="d-flex justify-content-between align-items-center">
+        <div class="d-flex flex-column">
+          <span>{{ character.id }}</span>
+          <span>{{ character.name }}</span>
+          <strong [class.text-danger]="character.powerLevel > 9000 "
+            [class.text-primary]="character.powerLevel < 9000 ">
+            {{ character.powerLevel }}
+          </strong>
+        </div>
+      </div>
+    </li>
+
+    }
+    @else {
+    <li class="list-group-item list-group-item-primary">
+      <div class="d-flex justify-content-between align-items-center">
+        <div class="d-flex flex-column">
+          <span>{{ character.id }}</span>
+          <span>{{ character.name }}</span>
+          <strong [class.text-danger]="character.powerLevel > 9000 "
+            [class.text-primary]="character.powerLevel < 9000 ">
+            {{ character.powerLevel }}
+          </strong>
+        </div>
+      </div>
+      }
+
+  </ul>
+  }
+
+</div>
